@@ -1,0 +1,4 @@
+/logs
+picklist-report.txt
+*.pyc
+.idea/
