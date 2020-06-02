@@ -55,6 +55,9 @@ value to 'true' instructs the client to use OAuth authentication protocols
 
 * user_secret: This should be either your password or client_secret if using OAuth
 
+* verify_ssl_cert: This should be either True or False.  If set to False the client will skip SSL certificate 
+verification
+
 
 ## Running the script
 

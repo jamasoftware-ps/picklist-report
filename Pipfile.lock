@@ -39,11 +39,11 @@
         },
         "py-jama-rest-client": {
             "hashes": [
-                "sha256:8e8ca0d8df7da0f2080056192e6ce8608be1d3d4fc8bcd393b0d09f251ce24ab",
-                "sha256:e58c72976f071a0790b0b4f3ddb3a9363c954c6c4e93b3799b39d61727870535"
+                "sha256:3847437cac999c9a2b85b1fd18f15867a57b41ca60d94dc4b9cc4529b2e5eb7f",
+                "sha256:c94539cc8a5f0aac6ccae9f8c9e54fe2e7451a46c76a49ad8202f0d9ce8fa1c6"
             ],
             "index": "pypi",
-            "version": "==1.12.1"
+            "version": "==1.13.0"
         },
         "requests": {
             "hashes": [

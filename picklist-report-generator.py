@@ -42,6 +42,7 @@ def create_jama_client(config: configparser.ConfigParser):
     user_id = None
     user_secret = None
     oauth = None
+    verify_ssl_cert = None
     try:
         url = config.get('CLIENT_SETTINGS', 'jama_connect_url').strip()
         # Clean up URL field
@@ -53,13 +54,14 @@ def create_jama_client(config: configparser.ConfigParser):
         oauth = config.getboolean('CLIENT_SETTINGS', 'oauth')
         user_id = config.get('CLIENT_SETTINGS', 'user_id').strip()
         user_secret = config.get('CLIENT_SETTINGS', 'user_secret').strip()
+        verify_ssl_cert = config.get('CLIENT_SETTINGS', 'verify_ssl_cert', fallback=False).strip()
     except configparser.Error as config_error:
         logger.error("Unable to parse CLIENT_SETTINGS from config file because: {}, "
                      "Please check config file for errors and try again."
                      .format(str(config_error)))
         exit(1)
 
-    return JamaClient(url, (user_id, user_secret), oauth=oauth)
+    return JamaClient(url, (user_id, user_secret), oauth=oauth, verify=verify_ssl_cert)
 
 
 def generate_report(client: JamaClient):
