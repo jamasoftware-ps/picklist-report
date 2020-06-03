@@ -54,7 +54,7 @@ def create_jama_client(config: configparser.ConfigParser):
         oauth = config.getboolean('CLIENT_SETTINGS', 'oauth')
         user_id = config.get('CLIENT_SETTINGS', 'user_id').strip()
         user_secret = config.get('CLIENT_SETTINGS', 'user_secret').strip()
-        verify_ssl_cert = config.get('CLIENT_SETTINGS', 'verify_ssl_cert', fallback=False).strip()
+        verify_ssl_cert = config.getboolean('CLIENT_SETTINGS', 'verify_ssl_cert', fallback=False)
     except configparser.Error as config_error:
         logger.error("Unable to parse CLIENT_SETTINGS from config file because: {}, "
                      "Please check config file for errors and try again."
